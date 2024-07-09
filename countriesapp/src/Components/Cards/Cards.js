@@ -1,40 +1,58 @@
 import React from 'react'
-import styles from './Cards.module.css'
+
 import { useEffect, useState } from 'react';
 
 
 function Cards() {
-  const [data ,setData] = useState([]);
 
-  const manage = async()=>{
-    try {
-      const res = await fetch("https://restcountries.com/v3.1/all")
-      const display = await res.json();
-      setData(display);
-    } catch (error) {
-      console.log("Error fetching data:",error);
-    }
-  }
+  const [countries, setCountries] = useState([]);
 
-  useEffect(()=>{
-    manage()
-  },[])
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then((response) => response.json())
+      .then((data) => setCountries(data))
+      .catch((error) => console.error("Error fetching data: ", error));
+  }, []);
 
+  const cardStyle = {
+    width: "200px",
+    border: "1px solid #ccc",
+    borderRadius: "10px",
+    margin: "10px",
+    padding: "10px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  };
+
+  const containerStyle = {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh"
+  };
+
+  const imageStyle = {
+    width: "100px",
+    height: "100px"
+  };
 
   return (
-    <div className={styles.container}> 
- 
-   
-          {data.map((items) => (
-                  <div className={styles.card}>
-                          <img src={items.flags.png} alt='flags' width={100} height={100} />
-                          <p className={styles.p}>{items.name.common}</p>
-                  </div> 
-          ))}
-        
-    </div>      
-   
-  )
+    <div style={containerStyle}>
+      {countries.map((country) => (
+        <div key={country.cca3} style={cardStyle}>
+          <img
+            src={country.flags.png}
+            alt={`Flag of ${country.name.common}`}
+            style={imageStyle}
+          />
+          <h2>{country.name.common}</h2>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default Cards
