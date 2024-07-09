@@ -1,10 +1,6 @@
-import React from 'react'
-
-import { useEffect, useState } from 'react';
-
+import React, { useEffect, useState } from "react";
 
 function Cards() {
-
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -55,4 +51,4 @@ function Cards() {
   );
 }
 
-export default Cards
+export default Cards;
