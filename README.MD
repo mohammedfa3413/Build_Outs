@@ -5,5 +5,3 @@
 ### StopWatch : [https://build-outs-odsm.vercel.app/]()
 
 ### FullName Display : [https://full-name-display-dun.vercel.app/]()
-
-### Counter App :
