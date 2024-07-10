@@ -1,0 +1,21 @@
+.container{
+    padding: 5px;
+    margin:5px;
+}
+
+.heading{
+    font-weight: normal;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.button{
+    display: flex;
+    align-self: flex-start;
+}
+
+
