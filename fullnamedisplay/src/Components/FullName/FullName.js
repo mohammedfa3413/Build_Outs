@@ -38,13 +38,13 @@ function FullName() {
         <form className={styles.form} onClick={handelSubmit}>
           <label>
             First Name : 
-            <input value={firstname} onChange={handelfirstchange} title={firstname === "" ? 'Please fill out this field' : ""}/>
+            <input type='text' value={firstname} onChange={handelfirstchange} title={firstname === "" ? 'Please fill out this field' : ""}/>
           </label>
           <label>
             Last Name : 
-            <input value={lastname} onChange={handellastchange} title={lastname === "" ? 'Please fill out this field' : ""}/>
+            <input type='text' value={lastname} onChange={handellastchange} title={lastname === "" ? 'Please fill out this field' : ""}/>
           </label>
-         <button className={styles.button}>Submit</button>
+         <button className={styles.button} type='submit'>Submit</button>
         </form>
         {message && <p>{message}</p>} 
         {submit && <p>Full Name:{fullName}</p>}
