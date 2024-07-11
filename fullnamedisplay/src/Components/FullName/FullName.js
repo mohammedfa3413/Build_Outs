@@ -47,7 +47,7 @@ function FullName() {
          <button className={styles.button} type='submit'>Submit</button>
         </form>
         {message && <p>{message}</p>} 
-        {submit && <p>Full Name:{fullName}</p>}
+        {submit && <p>Full Name: {fullName}</p>}
     </div>
   )
 }
