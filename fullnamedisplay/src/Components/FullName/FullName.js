@@ -14,7 +14,7 @@ function FullName() {
 
 
     if(!firstname || !lastname){
-        setMessage("Please Enter The Fields")  
+        setMessage("")  
     }else{
       setfullname(`${firstname} ${lastname}`)
       setMessage("")
